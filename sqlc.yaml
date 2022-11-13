@@ -1,0 +1,28 @@
+version: "1"
+packages:
+  - name: "db" # 生成されるコードに使用されるパッケージ名
+
+    # 生成されたコードの出力先ディレクトリ
+    path: "db/sqlc"
+
+    # SQLクエリのディレクトリ
+    queries: "./db/query"
+
+    # SQLマイグレーションのディレクトリ
+    schema: "./db/migration"
+
+    # postgresqlまたはmysqlのどちらかを指定します。デフォルトは postgresql
+    engine: "postgresql"
+
+    # 生成された構造体にJSONタグを追加
+    emit_json_tags: true
+
+    # プリペアドクエリのサポート
+    emit_prepared_queries: false
+
+    # 生成されたパッケージに Querier インターフェイスを出力
+    emit_interface: false
+
+    # sqlcは複数のテーブル名を単数化
+    emit_exact_table_names: false
+
